@@ -1,7 +1,11 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: rgb(239, 239, 239);
     margin: 0;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
 }
 
 a{
@@ -14,8 +18,15 @@ a{
     display: block;
     clear: both;
   }
+  
+  .topNameBar-inner{
+    padding: 0 167px;
+  }
+
   .topNameBar{
-      padding: 20px 192px 20px 192px;
+      padding: 20px 0 20px 0;
+      position: fixed;
+      width: 100%;
 
   }
 
@@ -30,7 +41,7 @@ a{
     padding: 0;
 }
 
-.topNameBar > nav > ul > li{
+.topNameBar  nav > ul > li{
     float: left;
     list-style: none;
     margin-left: 17px;
@@ -71,5 +82,125 @@ a{
     color: rgb(162, 157 , 162);
 }
 
+.banner{
+    height: 517px;
+    background-image: url(./img/rs-cover-2-2-1-1.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.banner .mask{
+    height: 517px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.userCard{
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 931px;
+    border: 1px solid red;
+}
+
+.pictureAndText{
+    padding: 57px 52px 57px 52px;
+}
 
 
+.userCard .pictureAndText .userPicture{
+    float: left;
+} 
+
+/* --------*/
+.userCard .pictureAndText .userPicture .userPhotoHover{
+    display: none;
+} 
+
+.userCard .pictureAndText .userPicture:hover .userPhoto{
+    display: none;
+} 
+
+.userCard .pictureAndText .userPicture:hover .userPhotoHover{
+    display: block;
+} 
+/*----------*/
+
+.userCard .pictureAndText .userText{
+    width: 460px;
+    margin-left: 63px;
+    float: left;
+}
+
+.userCard .pictureAndText .userText h1{
+    margin-top: 26px;
+    margin-bottom: 18px;
+}
+
+.userCard .pictureAndText .userText hr{
+    border: none;
+    border-top: 1px solid rgb(222, 222, 222);
+    margin: 28px 0px;
+}
+
+.userCard .welcome{
+    display: inline-block;
+    line-height: 22px;
+    padding: 5px 9px;
+    color: white;
+    background-color: rgb(232, 103 , 107);
+    position: relative;
+}
+
+.userCard .welcome .triangle{
+    display: block;
+    width: 0px;
+    border-bottom: 10px solid transparent;
+    border-left:10px solid rgb(232, 103 , 107);
+    margin-left: 2px;
+    position: absolute;
+    left: 4px;
+    top: 100%;
+    
+}
+
+.userCard dl dt,
+.userCard dl dd{
+    float: left;
+    padding: 10px 0;
+}
+
+.userCard dl dt{
+    width: 30%;
+    font-weight: bold;
+}
+
+.userCard dl dd{
+    width: 70%;
+    color: rgb(158, 168, 161);
+}
+
+.userCard .media{
+    background-color: rgb(232, 103 , 107);
+    text-align: center;
+}
+
+.userCard .media a{
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    padding: 5px 0;
+    line-height: 30px;
+    margin: 16px 16px;
+}
+
+.userCard .media a:hover{
+    background-color:rgb(208, 92, 96);
+}
+
+.userCard svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+
+    vertical-align: top; /*give more space form symbol top to div top*/
+}
