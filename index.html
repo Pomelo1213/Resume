@@ -46,7 +46,7 @@
                             <span class="welcome">Hello<span class="triangle"></span></span>
                             
                             <h1>
-                                <strong>罗新</strong>
+                                罗新
                             </h1>
                             <p>前端工程师,攻城狮</p>
                             <hr>
@@ -88,38 +88,84 @@
 
                 </footer>
             </div>
-
-        <a class="button" href="#">下载PDF简历</a>
-        <p>我是罗新，我是一个热爱生活的人。<br>
+        <p class="downloadResume-warp">
+            <a class="downloadResume" href="./resume.pdf" download>下载PDF简历</a>    
+        </p>
+        
+        <p class="selfIntroduction">我是罗新，我是一个热爱生活的人。111111111111111111111111111111111111111111111111111111111111111111111111111<br>
             嘿嘿！
         </p>
         </main>
 
-        <section>
+        <section class="skills">
             <h2>技能</h2>
-            <ol>
-                <li>HTML &amp; CSS</li>
-                <li>JavaScript</li>
-                <li>JQuery</li>
-                <li>Vue</li>
-                <li>React</li>
-                <li>HTTP</li>
+            <ol class="clearfix">
+                <li>
+                    HTML &amp; CSS
+                    <div class="progressBar">
+                        <div class="progress" style="width: 35%;"></div>
+                    </div>
+                </li>
+                <li>
+                    JavaScript
+                    <div class="progressBar">
+                            <div class="progress" style="width: 100%;"></div>
+                    </div>
+                </li>
+                <li>
+                    JQuery
+                    <div class="progressBar">
+                            <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </li>
+                <li>
+                    Vue
+                    <div class="progressBar">
+                            <div class="progress" style="width: 66%;"></div>
+                    </div>
+                </li>
+                <li>
+                    React
+                    <div class="progressBar">
+                            <div class="progress" style="width: 45%;"></div>
+                    </div>
+                </li>
+                <li>
+                    HTTP
+                    <div class="progressBar">
+                            <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </li>
             </ol>
         </section>
-        <section>
+        <section class="profile">
             <h2>作品集</h2>
             <nav>
-                <ol>
-                    <li>所有</li>
-                    <li>框架作品</li>
-                    <li>原生JS &amp; CSS</li>
+                
+                <ol class="clearfix">
+                    <li id="port1">所有</li>
+                    <li id="port2">框架作品</li>
+                    <li id="port3">原生JS &amp; CSS</li>
                 </ol>
+                <div id="poto" class="bar state-1">
+                    <div class="bar-inner"></div>
+                </div>
             </nav>
-
-            <div class="jobs">
-                <div class="big"></div>
-                <div class="small"></div>
-                <div class="small"></div>
+            <script>
+                port1.onclick = function(){
+                    poto.className = "bar state-1";
+                }
+                port2.onclick = function(){
+                    poto.className = "bar state-2";
+                }
+                port3.onclick = function(){
+                    poto.className = "bar state-3";
+                }
+            </script>
+            <div class="works">
+                <div class="big" ></div>
+                <div class="small1"></div>
+                <div class="small2"></div>
             </div>
         </section>
 
