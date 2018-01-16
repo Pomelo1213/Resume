@@ -9,7 +9,7 @@ body{
 }
 
 a{
-    color: rgb(188, 190, 193);
+
     text-decoration: none;
 }
 
@@ -27,11 +27,20 @@ ol, li{
   }
 
   .topNameBar{
-      padding: 20px 0 20px 0;
+      padding: 20px 0;
       position: fixed;
       width: 100%;
-
+      transition: all 1s;
+      color: rgb(188, 190, 193);
   }
+
+.topNameBar.active{
+    background-color: white;
+    box-shadow: 0px 5px 2px -1px rgba(0,0,0,0.33);
+    color: black;
+    padding: 9px 0;
+    z-index: 1;
+}
 
   .topNameBar nav{
       float: right;
@@ -48,12 +57,11 @@ ol, li{
     float: left;
     margin-left: 17px;
     margin-right: 17px;
-    
-
+    position: relative;
 }
 
-.topNameBar nav ul li a{
 
+.topNameBar nav ul li a{
     font-size: 13px;
     font-weight: bold;
     border-top: 4px solid transparent;
@@ -61,10 +69,30 @@ ol, li{
     padding-top: 9px;
     padding-bottom: 8px;
     display: block;
+    position: relative;
+    color: inherit;
 }
 
-.topNameBar nav ul li a:hover{
-    border-bottom: 4px solid rgb(232, 103 , 107);
+
+.topNameBar nav ul li.active a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: rgb(232, 103, 107);
+    animation: aSlide 0.3s;
+}
+
+@keyframes aSlide{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
 }
 
 .topNameBar .logo{
@@ -82,6 +110,36 @@ ol, li{
 
 .topNameBar .logo .card{
     color: rgb(162, 157 , 162);
+}
+
+.topNameBar .topNameBar-inner nav .menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    color: black;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.topNameBar .topNameBar-inner nav .menu li{
+    margin: 10px;
+    white-space: nowrap;  /*不允许自动换行*/
+}
+
+.topNameBar .topNameBar-inner nav li.active .menu{
+    display: block;
+    animation: menuSlide 0.5s;
+
+}
+
+@keyframes menuSlide{
+    0%{
+        margin-right: 100%;
+    }
+    100%{
+        margin-right: 0;
+    }
 }
 
 .banner{
@@ -127,7 +185,7 @@ main{
 } 
 
 .userCard .pictureAndText .userPicture:hover .userPhotoHover{
-    display: block;
+    display: inline;
 } 
 /*----------*/
 

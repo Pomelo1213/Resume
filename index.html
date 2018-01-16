@@ -3,6 +3,7 @@
     <head>
         <title>我的简历</title>
         <link rel="stylesheet" href="./a.css">
+        <link rel="stylesheet" href="./load.css">
         <script src="//at.alicdn.com/t/font_520808_0h66akbr17yl23xr.js"></script>
         <style type="text/css">
             .icon {
@@ -11,32 +12,53 @@
                fill: currentColor;
                overflow: hidden;
             }
+
+
         </style>
     </head>
-    <body>  
-        <div class="topNameBar">
+    <body>
+    <div id="siteCover" class="coverBack active">
+        <div class="loading"></div>
+    </div>
+        <div id="topNameBar" class="topNameBar">
             <div class="topNameBar-inner clearfix">
-            <a href="#" class="logo" alt="logo">
-                <span class="rs">RS</span><span class="card">card</span>
-            </a>
-            <nav>
-                <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li> <a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">博客</a></li>
-                    <li><a href="#">日历</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">其他</a></li> 
-                </ul>
-            </nav>
+                <a href="#" class="logo" alt="logo">
+                    <span class="rs">RS</span><span class="card">card</span>
+                </a>
+                <nav class="menuTags">
+                    <ul class="clearfix">
+                        <li><a href="#siteAbout">关于</a></li>
+                        <li>
+                            <a href="#siteSkill">技能</a>
+                        </li>
+                        <li class="liTags">
+                            <a href="#siteProduct">作品</a>
+                            <ul class="menu">
+                                <li>作品1</li>
+                                <li>作品2</li>
+                                <li>作品3</li>
+                            </ul>
+                        </li>
+                        <li class="liTags">
+                            <a href="#siteBlog">博客</a>
+                            <ul class="menu">
+                                <li>博客1</li>
+                                <li>博客2</li>
+                                <li>博客3</li>
+                            </ul>
+                        </li>
+                        <li><a href="#siteClendar">日历</a></li>
+                        <li><a href="#siteConnect">联系方式</a></li>
+                        <li><a href="#siteOther">其他</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <div class="banner">
             <div class="mask"></div>
         </div>  
         <main>
-            <div class="userCard">
+            <div id="siteAbout" class="userCard">
                 <div class="pictureAndText clearfix">
                     <div class="userPicture">
                         <img src="./img/startuper-1-299x347.jpg" class="userPhoto" alt="头 像">
@@ -97,7 +119,7 @@
         </p>
         </main>
 
-        <section class="skills">
+        <section id="siteSkill" class="skills">
             <h2>技能</h2>
             <ol class="clearfix">
                 <li>
@@ -138,7 +160,7 @@
                 </li>
             </ol>
         </section>
-        <section class="profile">
+        <section id="siteProduct" class="profile">
             <h2>作品集</h2>
             <nav>
                 
@@ -168,6 +190,42 @@
                 <div class="small2"></div>
             </div>
         </section>
+
+    <script>
+        setTimeout(function(){
+            siteCover.classList.remove('active');
+        }, 100);
+
+        window.onscroll = function(){
+            if(window.scrollY > 0){
+                topNameBar.classList.add('active');
+            }else{
+                topNameBar.classList.remove('active');
+            }
+        }
+
+        let liTags = document.querySelectorAll('nav.menuTags > ul > li')
+        for(let i = 0; i < liTags.length; i++){
+            liTags[i].onmouseenter = function(x){
+                x.currentTarget.classList.add('active')
+            }
+
+            liTags[i].onmouseleave = function(x){
+                x.currentTarget.classList.remove('active')
+            }
+        }
+
+        let as = document.querySelectorAll('nav.menuTags > ul > li > a')
+        for(let i = 0; i < as.length; i++){
+            as[i].onclick = function(x){
+                x.preventDefault()
+                let a = x.currentTarget
+                let href = a.getAttribute('href')
+                let element = document.querySelector(href)
+                window.scrollTo(0, element.offsetTop - 70)
+            }
+        }
+    </script>
 
     </body>
 
