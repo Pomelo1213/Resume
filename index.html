@@ -58,7 +58,7 @@
             <div class="mask"></div>
         </div>  
         <main>
-            <div id="siteAbout" class="userCard">
+            <div site-Flag id="siteAbout" class="userCard">
                 <div class="pictureAndText clearfix">
                     <div class="userPicture">
                         <img src="./img/startuper-1-299x347.jpg" class="userPhoto" alt="头 像">
@@ -119,7 +119,7 @@
         </p>
         </main>
 
-        <section id="siteSkill" class="skills">
+        <section site-Flag id="siteSkill" class="skills">
             <h2>技能</h2>
             <ol class="clearfix">
                 <li>
@@ -160,7 +160,7 @@
                 </li>
             </ol>
         </section>
-        <section id="siteProduct" class="profile">
+        <section site-Flag id="siteProduct" class="profile">
             <h2>作品集</h2>
             <nav>
                 
@@ -191,10 +191,21 @@
             </div>
         </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.js"></script>
     <script>
         setTimeout(function(){
             siteCover.classList.remove('active');
-        }, 2000);
+        }, 1000);
+
+
+        let findThings = document.querySelectorAll('[site-Flag]')
+        for(let i = 0; i < findThings.length; i++){
+            findThings[i].classList.add('animation')
+        }
+
+        setTimeout(function(){
+            findCloset()
+        }, 1100)
 
         window.onscroll = function(){
             if(window.scrollY > 0){
@@ -202,6 +213,30 @@
             }else{
                 topNameBar.classList.remove('active');
             }
+
+            findCloset()
+
+        }
+
+        function findCloset(){
+            let findThings = document.querySelectorAll('[site-Flag]')
+            let minIndex = 0
+            for(let i = 1; i < findThings.length; i++){
+                if(Math.abs(findThings[i].offsetTop - window.scrollY) < Math.abs(findThings[minIndex].offsetTop - window.scrollY)){
+                    minIndex = i
+                }
+            }
+
+            findThings[minIndex].classList.remove('animation')
+            let id = findThings[minIndex].id
+            let href = document.querySelector('a[href="#'+ id+'"]')
+            let li = href.parentNode
+            let liBrothers = li.parentNode.children;
+            for(let i = 0; i < liBrothers.length; i++){
+                liBrothers[i].classList.remove('highlight')
+            }
+            li.classList.add('highlight')
+
         }
 
         let liTags = document.querySelectorAll('nav.menuTags > ul > li')
@@ -215,6 +250,13 @@
             }
         }
 
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
+
+        requestAnimationFrame(animate);
+
         let as = document.querySelectorAll('nav.menuTags > ul > li > a')
         for(let i = 0; i < as.length; i++){
             as[i].onclick = function(x){
@@ -222,7 +264,17 @@
                 let a = x.currentTarget
                 let href = a.getAttribute('href')
                 let element = document.querySelector(href)
-                window.scrollTo(0, element.offsetTop - 70)
+                let top = element.offsetTop
+                let currentTop = window.scrollY
+
+                var coords = {y: currentTop };
+                var tween = new TWEEN.Tween(coords)
+                    .to({y: top-80 }, 500)
+                    .easing(TWEEN.Easing.Quadratic.Out)
+                    .onUpdate(function() {
+                        window.scrollTo(0, coords.y)
+                    })
+                    .start();
             }
         }
     </script>
