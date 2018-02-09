@@ -1,0 +1,15 @@
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+
+ .swiper-container {
+    width: 740px;
+    height: 400px;
+    background-color: white;
+    margin-bottom: 300px;
+    margin-top: 20px;
+}
+
