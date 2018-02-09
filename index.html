@@ -169,23 +169,24 @@
     </section>
     <section site-Flag id="siteProduct" class="profile">
         <h2>作品集</h2>
+        <div class="mySlides">
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img src="./img/apple.jpg" class="swiper-slide" alt="apple">
+                    <img src="./img/guid.jpg" class="swiper-slide" alt="guid">
+                    <img src="./img/tim.jpg" class="swiper-slide" alt="tim">
 
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <img src="./img/apple.jpg" class="swiper-slide" alt="apple">
-                <img src="./img/guid.jpg" class="swiper-slide" alt="guid">
-                <img src="./img/tim.jpg" class="swiper-slide" alt="tim">
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
 
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
         </div>
 
     </section>
@@ -193,13 +194,16 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+<script src="./js/auto-slide-up.js"></script>
+<script src="./js/sticky-topbar.js"></script>
+<script src="./js/smooth-scroll.js"></script>
 <script src="./js/swiper.js"></script>
-<script src="./js/page.js"></script>
+
 <script>
 
-setTimeout(function(){
-    siteCover.classList.remove('active');
-}, 1000);
+    setTimeout(function () {
+        siteCover.classList.remove('active');
+    }, 1000);
 
 </script>
 </body>
