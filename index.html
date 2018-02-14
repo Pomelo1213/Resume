@@ -3,10 +3,10 @@
 
 <head>
     <title>我的简历</title>
-    <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="./load.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!--<link rel="stylesheet" href="./css/load.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
-    <link rel="stylesheet" href="./add.css">
+    <link rel="stylesheet" href="./css/add.css">
     <script src="//at.alicdn.com/t/font_520808_0h66akbr17yl23xr.js"></script>
 </head>
 
@@ -188,6 +188,17 @@
 
             </div>
         </div>
+    </section>
+
+    <section class="message">
+        <h2>留言</h2>
+        <ol id="messageList">
+        </ol>
+        <form id="postMessage">
+            <labe>昵称：<input type="text" name="name"></label>
+            <label>说点什么：<input type="text" name="content"></label>
+            <input type="submit" name="提交">
+        </form>
 
     </section>
 </body>
@@ -198,12 +209,14 @@
 <script src="./js/sticky-topbar.js"></script>
 <script src="./js/smooth-scroll.js"></script>
 <script src="./js/swiper.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.6.0/av-min.js"></script>
+<script src="./js/message.js"></script>
 
 <script>
 
     setTimeout(function () {
         siteCover.classList.remove('active');
-    }, 1000);
+    });
 
 </script>
 </body>

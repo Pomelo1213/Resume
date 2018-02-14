@@ -145,7 +145,7 @@ ol, li{
 
 .banner{
     height: 517px;
-    background-image: url(./img/rs-cover-2-2-1-1.jpg);
+    background-image: url(../img/rs-cover-2-2-1-1.jpg);
     background-position: center center;
     background-size: cover;
 }
@@ -311,6 +311,7 @@ main .selfIntroduction{
 }
 
 section.skills,
+section.message,
 section.profile{
     margin-top: 85px;
     margin-left: auto;
@@ -319,6 +320,7 @@ section.profile{
 }
 
 .skills h2,
+.message h2,
 .profile h2{
     text-align: center;
 }
@@ -363,61 +365,20 @@ section.profile{
     transform: translateX(-100%)
 }
 
-/*
-
-.profile{
-    text-align: center;
+.message{
+    margin-bottom: 50px;
 }
 
-.profile nav{
-    margin-top: 35px;
-    margin-bottom: 29px;
-    text-align: center;
-    display: inline-block;
+.message ol{
+    border-top: 1px solid #DDD;
+    margin: 10px 0;
 }
 
-.profile nav ol{
-    display: inline-block;
-    vertical-align: top;
+.message ol li{
+    padding: 10px;
+    border-bottom: 1px solid #DDD;
 }
 
-.profile nav ol li{
-    cursor: pointer;
-    margin-left: 30px;
-    float: left;
+.message form{
+    margin-left: 50px;
 }
-
-.profile nav ol li:nth-child(1){
-    margin-left: 0;
-}
-
-.profile nav .bar{
-    margin-top: 5px;
-    border-radius: 3px;
-    height: 5px;
-    background: white;
-}
-
-
-
-.profile nav .bar .bar-inner{
-    border-radius: 3px;
-    height: 100%;
-    width: 10%;
-    background: rgb(232, 103, 107);
-    transition-duration: 0.5s;
-}
-
-.profile nav .bar.state-1 .bar-inner{
-    width: 32px;
-    margin-left: 0;
-}
-.profile nav .bar.state-2 .bar-inner{
-    width: 60px;
-    margin-left: 65px;
-}
-.profile nav .bar.state-3 .bar-inner{
-    width: 102px;
-    margin-left: 158px;
-}
-*/
